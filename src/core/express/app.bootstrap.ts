@@ -1,3 +1,5 @@
+import { loadModule } from "./module/module-loader";
+import { modules } from '../../api'
 import AppServer from "./server.class";
 
 export function init() {
@@ -6,4 +8,5 @@ export function init() {
     const appServer = new AppServer()
     appServer.start(port)
     
+    loadModule(modules['todos'], appServer.app)
 }
