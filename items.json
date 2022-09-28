@@ -1,0 +1,38 @@
+[
+    {
+        "name": "NewName",
+        "description": "string",
+        "colors": [
+            "blue"
+        ],
+        "price": 20,
+        "sku": "sku001",
+        "weight": 1,
+        "image_url": "https://",
+        "id": 1
+    },
+    {
+        "name": "NewName",
+        "description": "string",
+        "colors": [
+            "blue"
+        ],
+        "price": 20,
+        "sku": "sku001",
+        "weight": 1,
+        "image_url": "https://",
+        "id": 2
+    },
+    {
+        "name": "NewName",
+        "description": "string",
+        "colors": [
+            "blue"
+        ],
+        "price": 20,
+        "sku": "sku001",
+        "weight": 1,
+        "image_url": "https://",
+        "id": 3
+    }
+]
