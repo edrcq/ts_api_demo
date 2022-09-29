@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { Controller } from '../../common/interfaces/controller.class'
+import { CrudController } from '../../common/interfaces/controller.class'
 
-class TodosController extends Controller {
+class TodosController extends CrudController {
 
     static getAll(req: Request, res: Response) {
 
