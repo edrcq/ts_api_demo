@@ -12,7 +12,7 @@ interface IStore {
     getOne: (id: resourceId) => IItem
     add: (item: IItem) => IItem
     replace: (id: resourceId, item: IItem) => boolean // true = replaced || false = not found
-    remove: (id: resourceId) => void
+    remove: (id: resourceId) => IItem[] | false
     update: (id: resourceId, partialItem: IPartialItem) => IItem | false
 }
 
@@ -47,7 +47,7 @@ export interface IStoreOptions {
 }
 
 export class Store implements IStore {
-    data: IItem[];
+    data: IItem[] = [];
     filename: string;
 
     constructor(options: IStoreOptions) {
@@ -75,7 +75,8 @@ export class Store implements IStore {
 
     add(item: IItem): IItem {
         if (!item.id) {
-            item.id = this.data.at(-1)?.id + 1 || 1
+            item.id = this.data[this.data.length - 1]?.id + 1 || 1
+            //item.id = this.data?.at(-1)?.id + 1 || 1
         }
         this.data.push(item)
         return item;
@@ -95,11 +96,12 @@ export class Store implements IStore {
         return false;
     }
 
-    remove(id: number) {
+    remove(id: number): IItem[] | false {
         const index = this.data.findIndex(item => item.id === id)
         if (index > -1) {
-            this.data.splice(index, 1)
+            return this.data.splice(index, 1)
         }
+        return false;
     }
 
     update(id: number, partialItem: IPartialItem): IItem | false {
