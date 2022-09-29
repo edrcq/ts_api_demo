@@ -1,3 +1,4 @@
 export { Module, ModuleList } from './module.interface'
-export { Controller } from './controller.class'
+export { CrudController } from './controller.class'
 export { ApiRoute } from './route.interface'
+export { TodoState } from './todo.interface'
