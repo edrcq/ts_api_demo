@@ -11,7 +11,9 @@ export class Todo {
     @Column()
     text: string
 
-    @Column()
+    @Column({
+        default: TodoState.TODO
+    })
     state: TodoState
 
     @ManyToOne(() => Todolist, (todolist) => todolist.todos)

@@ -1,5 +1,6 @@
-import express, { Express } from 'express'
+import express, { Express, NextFunction, Request, Response } from 'express'
 import { simpleLogger } from './middlewares/simple-logger'
+import { errorHandler } from './error-handler'
 
 class AppServer {
     app: Express
@@ -14,6 +15,10 @@ class AppServer {
         this.app.use(express.json())
         // simple log requests
         this.app.use(simpleLogger)
+    }
+
+    initErrorHandler() {
+        this.app.use(errorHandler)
     }
 
     start(port: number) {

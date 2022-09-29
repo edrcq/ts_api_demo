@@ -10,7 +10,9 @@ export class Todolist {
     @Column()
     name: string
 
-    @Column()
+    @Column({
+        default: false
+    })
     archived: boolean
 
     @OneToMany(() => Todo, (todo) => todo.todolist)

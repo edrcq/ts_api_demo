@@ -18,6 +18,8 @@ enum TodoState {
     TODO = "todo",
 }
 
+type TodoStates = keyof typeof TodoState
+
 class TodoList implements ITodoList {
     name = "Default name"
     todos: ITodo[]

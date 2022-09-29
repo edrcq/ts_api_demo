@@ -6,7 +6,9 @@ export function init() {
     const port = parseInt(process.env.PORT) || 8080
 
     const appServer = new AppServer()
-    appServer.start(port)
     
     loadModule(modules['todos'], appServer.app)
+
+    appServer.initErrorHandler()
+    appServer.start(port)
 }

@@ -1,35 +1,36 @@
+import { CrudControllerAction } from "../../common/interfaces/controller.class";
 import { ApiRoute } from "../../common/interfaces/route.interface";
 
 const routes: ApiRoute[] = [
     {
         method: "get",
         path: "/",
-        action: "getAll"
+        action: CrudControllerAction.GET_ALL
     },
     {
         method: "get",
         path: "/:id",
-        action: "getOne"
+        action: CrudControllerAction.GET_ONE
     },
     {
         method: "post",
         path: "/",
-        action: "create"
+        action: CrudControllerAction.CREATE
     },
     {
         method: "put",
         path: "/:id",
-        action: "replace"
+        action: CrudControllerAction.REPLACE
     },
     {
         method: "patch",
         path: "/:id",
-        action: "update"
+        action: CrudControllerAction.UPDATE
     },
     {
         method: "delete",
         path: "/:id",
-        action: "remove"
+        action: CrudControllerAction.REMOVE
     }
 ]
 
