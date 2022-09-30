@@ -13,7 +13,7 @@ export const AppDataSource = new DataSource({
     database: 'test'
     */
    synchronize: true,
-   logging: true,
+   logging: false,
    entities: [Todolist, Todo],
    migrations: [],
 })

@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { BadRequestError } from "../../common/errors";
 import { CrudController } from '../../common/interfaces/controller.class'
 import { createTodolistDTO } from "./dto/todolist.dto";
@@ -15,13 +15,13 @@ class TodosController extends CrudController {
 
     }
 
-    static async create(req: Request, res: Response) {
+    static async create(req: Request, res: Response, next: NextFunction) {
         const check = createTodolistCheck(req.body)
         if (check === true) {
             const result = await createTodolist(req.body)
             res.json(result)
         } else {
-            throw new BadRequestError('bad schema createTodolist')
+            next(new BadRequestError('bad schema createTodolist'))
         }
     }
 

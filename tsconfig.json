@@ -5,8 +5,9 @@
           "es6",
           "ES2022"
        ],
-       "target": "es5",
+       "target": "ES2022",
        "module": "commonjs",
+       "declaration": true,
        "moduleResolution": "node",
        "outDir": "./build",
        "emitDecoratorMetadata": true,

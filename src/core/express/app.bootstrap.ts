@@ -11,4 +11,6 @@ export function init() {
 
     appServer.initErrorHandler()
     appServer.start(port)
+
+    return appServer;
 }

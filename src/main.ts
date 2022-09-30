@@ -6,7 +6,7 @@ import { addTodo, createTestTodolist, getAllTodos, getTodolistById } from './tes
 config();
 
 // connexion a la db
-AppDataSource.initialize().then(() => {
+//AppDataSource.initialize().then(() => {
     // init web server
     init();
     // getAllTodos()
@@ -14,4 +14,4 @@ AppDataSource.initialize().then(() => {
     //     const getTodolist = await getTodolistById(todolist.id)
     //     await addTodo(getTodolist, 'New todo!')
     // })
-})
+//})
